@@ -7,7 +7,20 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-   <><h1>Budget PLanner</h1></>
+   <>
+   <header>
+    <div>
+      <h1>Budget PLanner</h1></div>
+      <div>
+        <span>Home</span>
+        <span>About</span>
+        <span>Contact</span>
+        </div>
+   </header>
+   
+   
+   </>
+   
   )
 }
 
