@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './header'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
@@ -11,7 +12,7 @@ const Login = () => {
         <label for="email">Email</label>
         <input id="email" placeholder='Email' ></input>
         <label for="password">Password</label>
-        <input id="password" placeholder='Password' ></input>
+        <input id="password" placeholder='Password' type='Password' ></input>
         <button>Log In</button>
         <p>Don't have an account? <Link to={"/signup"}>Signup</Link></p>
       </div>
