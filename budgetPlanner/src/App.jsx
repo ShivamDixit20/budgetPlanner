@@ -6,7 +6,7 @@ import Header from './components/header'
 import Main from './components/Main';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import {Link, Routes} from 'react-router-dom'
+import {Routes} from 'react-router-dom'
 
 import {Route} from 'react-router-dom'
 function App() {
