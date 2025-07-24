@@ -8,7 +8,7 @@ const Dashboard = () => {
   const { transactions } = useContext(TransactionContext)
   const navigate = useNavigate()
 
-  // ✅ Check if user is logged in
+
   useEffect(() => {
     const checkSession = async () => {
       const { data: { session } } = await supabase.auth.getSession()
@@ -19,7 +19,7 @@ const Dashboard = () => {
     checkSession()
   }, [navigate])
 
-  // ✅ Calculate totals
+  
   const totalIncome = transactions
     .filter(txn => txn.amount > 0)
     .reduce((sum, txn) => sum + txn.amount, 0)

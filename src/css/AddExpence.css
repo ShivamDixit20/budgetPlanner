@@ -1,4 +1,4 @@
-/* Container layout */
+
 .add-expense {
   padding: 2rem;
   max-width: 1000px;
@@ -21,7 +21,7 @@
   font-size: 1rem;
 }
 
-/* Content grid */
+
 .add-expense-content {
   display: flex;
   gap: 2rem;
@@ -40,7 +40,7 @@
   }
 }
 
-/* Card base */
+
 .card {
   background: #ffffff;
   padding: 2rem;
@@ -49,7 +49,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-/* Form elements */
+
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -78,7 +78,7 @@
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-/* Form row for amount and date */
+
 .form-row {
   display: flex;
   gap: 1rem;
@@ -91,7 +91,7 @@
   }
 }
 
-/* Form actions */
+
 .form-actions {
   display: flex;
   justify-content: flex-end;
@@ -99,7 +99,7 @@
   margin-top: 1.5rem;
 }
 
-/* Buttons */
+
 .btn {
   padding: 0.75rem 1.5rem;
   border: none;
@@ -132,7 +132,7 @@
   background-color: #cbd5e1;
 }
 
-/* Tips section */
+
 .expense-tips h3 {
   margin-bottom: 1rem;
   font-size: 1.25rem;

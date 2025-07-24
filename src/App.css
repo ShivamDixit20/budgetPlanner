@@ -154,9 +154,9 @@ html {
     }
   }
   
-  /* Login Form Container */
+  
 .login {
-    max-width: 24rem; /* 384px */
+    max-width: 24rem; 
     margin: 4rem auto;
     padding: 2rem;
     background-color: #ffffff;
@@ -167,7 +167,7 @@ html {
     gap: 1rem;
   }
   
-  /* Heading */
+
   .login h1 {
     color: #000d9e;
     font-size: 1.75rem;
@@ -175,14 +175,14 @@ html {
     text-align: center;
   }
   
-  /* Labels */
+
   .login label {
     font-size: 1rem;
     color: #333;
     margin-top: 0.5rem;
   }
   
-  /* Inputs */
+
   .login input {
     padding: 0.75rem 1rem;
     font-size: 1rem;
@@ -196,7 +196,7 @@ html {
     border-color: #000d9e;
   }
   
-  /* Button */
+
   .login button {
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
@@ -213,7 +213,7 @@ html {
     background-color: #000bb0;
   }
   
-  /* Signup Text */
+
   .login p {
     margin-top: 1rem;
     font-size: 0.95rem;
@@ -230,7 +230,7 @@ html {
     text-decoration: underline;
   }
   
-  /* Responsive */
+  
   @media (max-width: 480px) {
     .login {
       margin: 2rem 1rem;
@@ -246,9 +246,9 @@ html {
     }
   }
   
-  /* Signup Form Container */
+
 .signup {
-    max-width: 24rem; /* 384px */
+    max-width: 24rem; 
     margin: 4rem auto;
     padding: 2rem;
     background-color: #ffffff;
@@ -259,7 +259,7 @@ html {
     gap: 1rem;
   }
   
-  /* Heading */
+
   .signup h1 {
     color: #000d9e;
     font-size: 1.75rem;
@@ -267,14 +267,14 @@ html {
     text-align: center;
   }
   
-  /* Labels */
+
   .signup label {
     font-size: 1rem;
     color: #333;
     margin-top: 0.5rem;
   }
   
-  /* Inputs */
+
   .signup input {
     padding: 0.75rem 1rem;
     font-size: 1rem;
@@ -288,7 +288,7 @@ html {
     border-color: #000d9e;
   }
   
-  /* Button */
+
   .signup button {
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
@@ -305,7 +305,7 @@ html {
     background-color: #000bb0;
   }
   
-  /* Redirect Text */
+
   .signup p {
     margin-top: 1rem;
     font-size: 0.95rem;
@@ -322,7 +322,7 @@ html {
     text-decoration: underline;
   }
   
-  /* Responsive */
+
   @media (max-width: 480px) {
     .signup {
       margin: 2rem 1rem;

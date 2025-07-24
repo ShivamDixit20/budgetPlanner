@@ -1,5 +1,5 @@
 .footer {
-  background-color: #0b1e3b; /* Dark blue background */
+  background-color: #0b1e3b;
   color: #f0f4f8;
   padding: 3rem 1.5rem 2rem;
   font-size: 0.95rem;
@@ -18,7 +18,7 @@
 .footer-brand h2 {
   margin-bottom: 0.5rem;
   font-size: 1.75rem;
-  color: #3b82f6; /* Light blue logo color */
+  color: #3b82f6;
 }
 
 .footer-links h4,
