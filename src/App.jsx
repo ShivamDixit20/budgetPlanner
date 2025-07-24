@@ -1,22 +1,18 @@
-import React from 'react';
-
-import './App.css'
-
+// App.jsx
+import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import { Routes } from 'react-router-dom'
-
-import { Route } from 'react-router-dom'
 import Navigation from './components/Navigation';
 import AddExpense from './components/AddExpence';
 import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
 
+
 function App() {
   return (
     <>
-      <Navigation />
+     <Navigation />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/add-expense' element={<AddExpense />} />
@@ -26,7 +22,6 @@ function App() {
       </Routes>
       <Footer/>
     </>
-
   )
 }
 

@@ -1,21 +1,37 @@
-import React, { useContext } from 'react';
-import '../css/Dashboard.css';
-import { TransactionContext } from '../context/TransactionContext';
+import React, { useContext, useEffect } from 'react'
+import '../css/Dashboard.css'
+import { TransactionContext } from '../context/TransactionContext'
+import { useNavigate } from 'react-router-dom'
+import { supabase } from '../supabaseClient'
 
 const Dashboard = () => {
   const { transactions } = useContext(TransactionContext)
+  const navigate = useNavigate()
 
+  // ✅ Check if user is logged in
+  useEffect(() => {
+    const checkSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession()
+      if (!session) {
+        navigate('/login')
+      }
+    }
+    checkSession()
+  }, [navigate])
+
+  // ✅ Calculate totals
   const totalIncome = transactions
     .filter(txn => txn.amount > 0)
-    .reduce((sum, txn) => sum + txn.amount, 0);
+    .reduce((sum, txn) => sum + txn.amount, 0)
 
   const totalExpenses = transactions
     .filter(txn => txn.amount < 0)
-    .reduce((sum, txn) => sum + txn.amount, 0);
+    .reduce((sum, txn) => sum + txn.amount, 0)
 
-  const totalBalance = totalIncome + totalExpenses;
+  const totalBalance = totalIncome + totalExpenses
+
   return (
-    <div className="dashboard">
+    <div className="dashboard" style={{ backgroundColor: 'lightblue', padding: '50px' }}>
       <div className="dashboard-header">
         <h1>Dashboard</h1>
         <p>Welcome back! Here's your financial overview.</p>
@@ -26,7 +42,7 @@ const Dashboard = () => {
           <div className="stat-icon">💰</div>
           <div className="stat-content">
             <h3>Total Balance</h3>
-            <div className="stat-amount"> {totalBalance.toFixed(2)}</div>
+            <div className="stat-amount">{totalBalance.toFixed(2)}</div>
           </div>
         </div>
 
@@ -34,7 +50,7 @@ const Dashboard = () => {
           <div className="stat-icon">📈</div>
           <div className="stat-content">
             <h3>Total Income</h3>
-            <div className="stat-amount positive">+ {totalIncome.toFixed(2)}</div>
+            <div className="stat-amount positive">+{totalIncome.toFixed(2)}</div>
           </div>
         </div>
 
@@ -42,7 +58,7 @@ const Dashboard = () => {
           <div className="stat-icon">📊</div>
           <div className="stat-content">
             <h3>Total Expenses</h3>
-            <div className="stat-amount negative"> {totalExpenses.toFixed(2)}</div>
+            <div className="stat-amount negative">{totalExpenses.toFixed(2)}</div>
           </div>
         </div>
       </div>
@@ -63,7 +79,7 @@ const Dashboard = () => {
                   <span className="transaction-date">{transaction.date}</span>
                 </div>
               </div>
-              <div className={`transaction-amount  {transaction.amount > 0 ? 'positive' : 'negative'}`}>
+              <div className={`transaction-amount ${transaction.amount > 0 ? 'positive' : 'negative'}`}>
                 {transaction.amount > 0 ? '+' : ''} {Math.abs(transaction.amount).toFixed(2)}
               </div>
             </div>
@@ -71,7 +87,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

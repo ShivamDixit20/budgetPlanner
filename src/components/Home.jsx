@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Home.css';
+import { UserLogedinContext } from '../context/UserLogedin';
 
 const Main = () => {
+  const {user} = useContext(UserLogedinContext);
   const navigate = useNavigate();
 
   return (
@@ -15,7 +17,12 @@ const Main = () => {
           Simplify budgeting, track spending, and gain insights into your financial life. Whether you're saving for a goal or managing daily expenses — we've got you covered.
         </p>
         <h2 className="main-subtitle">Smart Tools for Smarter Finances</h2>
-        <button className="btn btn-primary btn-lg" onClick={() => navigate('/add-expense')}>
+        <button className="btn btn-primary btn-lg" onClick={() => { 
+          if(!user) {
+            navigate('/login');
+          } else {
+            navigate('/add-expense') 
+          }}}>
           🚀 Get Started
         </button>
       </div>

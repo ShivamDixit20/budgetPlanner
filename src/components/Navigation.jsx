@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Navigation.css';
+import { UserLogedinContext } from '../context/UserLogedin';
 
 const Navigation = () => {
+
+  const {user} = useContext(UserLogedinContext);
+
   const navItems = [
     { id: 'home', label: 'Home', path: '/' },
     { id: 'add-expense', label: 'Add Expense', path: '/add-expense' },
@@ -22,7 +26,7 @@ const Navigation = () => {
               <Link
                 to={item.path}
               >
-                {item.label}
+                { item.label == "Login" ?  !user ?  item.label : "Logout" : item.label }
               </Link>
             </li>
           ))}
